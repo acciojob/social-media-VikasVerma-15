@@ -1,11 +1,12 @@
 import React from "react";
+import { users } from "../data";
 
 export default function Users() {
   return (
     <ul>
-      <li><a href="/users/1">Alice</a></li>
-      <li><a href="/users/2">Bob</a></li>
-      <li><a href="/users/3">Charlie</a></li>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
     </ul>
   );
 }

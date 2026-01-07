@@ -13,9 +13,11 @@ export default function App() {
         <h1>GenZ</h1>
 
         {/* REQUIRED ANCHORS */}
-        <a href="/">Posts</a>
-        <a href="/users">Users</a>
-        <a href="/notifications">Notifications</a>
+        <nav>
+  <a href="/">Posts</a>
+  <a href="/users">Users</a>
+  <a href="/notifications">Notifications</a>
+</nav>
 
         <Routes>
           <Route path="/" element={<Posts />} />

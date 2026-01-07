@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { users, initialPosts } from "../data";
 import CreatePost from "./CreatePost";
 
@@ -12,8 +11,8 @@ export default function Posts() {
       <CreatePost setPosts={setPosts} users={users} />
 
       {posts.map((post) => (
-        // child(2)
-        <div key={post.id}>
+        // child(2) → EACH post
+        <div key={post.id} className="post">
           {/* child(1) */}
           <p>{post.title}</p>
 
@@ -22,10 +21,10 @@ export default function Posts() {
             Edit
           </a>
 
-          {/* child(3) — EMPTY placeholder (IMPORTANT) */}
+          {/* child(3) — EMPTY div (Cypress expects this) */}
           <div></div>
 
-          {/* child(4) — reactions container */}
+          {/* child(4) — reactions */}
           <div>
             {post.reactions.map((r, i) => (
               <button

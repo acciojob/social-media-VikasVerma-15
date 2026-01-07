@@ -1,19 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Notifications() {
-  const [list, setList] = useState([]);
-
   return (
-    <>
-      <button className="button" onClick={() => setList(["One", "Two"])}>
-        Refresh Notifications
-      </button>
-
-      <section className="notificationsList">
-        {list.map((n, i) => (
-          <div key={i}>{n}</div>
-        ))}
-      </section>
-    </>
+    <div>
+      <button className="button">Clear Notifications</button>
+    </div>
   );
 }
