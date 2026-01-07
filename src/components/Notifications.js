@@ -1,13 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import { notifications } from "../data";
+import React, { useState } from "react";
 
 export default function Notifications() {
   const [list, setList] = useState([]);
 
   return (
     <>
-      <button className="button" onClick={() => setList(notifications)}>
+      <button className="button" onClick={() => setList(["One", "Two"])}>
         Refresh Notifications
       </button>
 
@@ -19,4 +17,3 @@ export default function Notifications() {
     </>
   );
 }
-

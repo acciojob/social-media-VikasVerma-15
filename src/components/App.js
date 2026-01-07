@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Posts from "./Posts";
-import Users from "./Users";
-import UserPosts from "./UserPosts";
-import Notifications from "./Notifications";
-import PostDetails from "./PostDetails";
+import Posts from "./pages/Posts";
+import Users from "./pages/Users";
+import Notifications from "./pages/Notifications";
+import PostDetails from "./pages/PostDetails";
+import UserPosts from "./pages/UserPosts";
 
 export default function App() {
   return (
@@ -12,11 +12,10 @@ export default function App() {
       <div className="App">
         <h1>GenZ</h1>
 
-        <nav>
-          <a href="/">Posts</a>
-          <a href="/users">Users</a>
-          <a href="/notifications">Notifications</a>
-        </nav>
+        {/* REQUIRED ANCHORS */}
+        <a href="/">Posts</a>
+        <a href="/users">Users</a>
+        <a href="/notifications">Notifications</a>
 
         <Routes>
           <Route path="/" element={<Posts />} />
