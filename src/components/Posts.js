@@ -9,18 +9,18 @@ export default function Posts() {
     <div className="posts-list">
       <CreatePost setPosts={setPosts} users={users} />
 
-      {posts.map((post) => (
+      {posts.map((post, idx) => (
   <div className="post" key={post.id}>
     <p>{post.title}</p>
     <Link className="button" to={`/posts/${post.id}`}>Edit</Link>
-    <div></div> {/* placeholder */}
+    <div></div>
     <div>
       {post.reactions.map((r, i) => (
         <button
           key={i}
           onClick={() => {
             const updated = [...posts];
-            updated[0].reactions[i]++;
+            updated[idx].reactions[i]++; 
             setPosts(updated);
           }}
         >
