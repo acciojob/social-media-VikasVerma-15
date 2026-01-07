@@ -1,22 +1,32 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Posts from "./Posts";
 import Users from "./Users";
 import Notifications from "./Notifications";
+import PostDetails from "./PostDetails";
+import UserPosts from "./UserPosts";
 
 export default function App() {
-  const path = window.location.pathname;
-
   return (
-    <div className="App">
-      <h1>GenZ</h1>
+    <Router>
+      <div className="App">
+        <h1>GenZ</h1>
 
-      <a className="button" href="/">Posts</a>
-      <a className="button" href="/users">Users</a>
-      <a className="button" href="/notifications">Notifications</a>
+        <nav>
+          <Link to="/">Posts</Link>
+          <Link to="/users">Users</Link>
+          <Link to="/notifications">Notifications</Link>
+        </nav>
 
-      {path === "/" && <Posts />}
-      {path === "/users" && <Users />}
-      {path === "/notifications" && <Notifications />}
-    </div>
+        <Routes>
+          <Route path="/" element={<Posts />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/users/:id" element={<UserPosts />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
