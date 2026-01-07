@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Posts from "./Posts";
 import Users from "./Users";
 import Notifications from "./Notifications";
+import PostDetails from "./PostDetails";
+import UserPosts from "./UserPosts";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="/" element={<Posts />} />
           <Route path="/users" element={<Users />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/users/:id" element={<UserPosts />} />
         </Routes>
       </div>
     </Router>

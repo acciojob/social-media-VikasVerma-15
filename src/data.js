@@ -6,16 +6,22 @@ export const users = [
 
 export const initialPosts = [
   {
-    id: "1",
+    id: "101",
     title: "Hello World",
-    content: "First post",
+    content: "This is my first post",
     author: "1",
+    reactions: [0, 0, 0, 0, 0]
+  },
+  {
+    id: "102",
+    title: "Second Post",
+    content: "Another post here",
+    author: "2",
     reactions: [0, 0, 0, 0, 0]
   }
 ];
 
 export const notifications = [
-  "New post added",
-  "User reacted",
-  "Post edited"
+  { id: "201", message: "Alice reacted to your post" },
+  { id: "202", message: "Bob created a new post" }
 ];

@@ -7,20 +7,19 @@ export default function CreatePost({ setPosts, users }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !content || !author) return; // prevent empty submissions
+    if (!title || !content || !author) return;
 
-    setPosts((p) => [
-      ...p,
+    setPosts((prev) => [
+      ...prev,
       {
         id: Date.now().toString(),
         title,
         content,
         author,
-        reactions: [0, 0, 0, 0, 0],
-      },
+        reactions: [0, 0, 0, 0, 0]
+      }
     ]);
 
-    // Clear inputs
     setTitle("");
     setContent("");
     setAuthor("");
@@ -41,9 +40,7 @@ export default function CreatePost({ setPosts, users }) {
       >
         <option value="">Select Author</option>
         {users.map((u) => (
-          <option key={u.id} value={u.id}>
-            {u.name}
-          </option>
+          <option key={u.id} value={u.id}>{u.name}</option>
         ))}
       </select>
       <textarea
@@ -56,4 +53,3 @@ export default function CreatePost({ setPosts, users }) {
     </form>
   );
 }
-
