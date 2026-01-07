@@ -1,13 +1,10 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-
 export default function PostDetails() {
-  const { postId } = useParams();
+  const { id } = useParams();
 
   return (
-    <div>
+    <div className="post-details">
       <h2>Edit Post</h2>
-      <input defaultValue={`Post ${postId}`} />
+      <input defaultValue={`Post ${id}`} />
       <button className="button">Save</button>
     </div>
   );

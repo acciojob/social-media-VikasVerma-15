@@ -7,20 +7,21 @@ import Notifications from "./Notifications";
 export default function App() {
   return (
     <Router>
-      <h1>GenZ</h1>
+      <div className="App">
+        <h1>GenZ</h1>
 
-      <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </nav>
+        <nav>
+          <Link to="/">Posts</Link>
+          <Link to="/users">Users</Link>
+          <Link to="/notifications">Notifications</Link>
+        </nav>
 
-      <Routes>
-        <Route path="/" element={<Posts />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/notifications" element={<Notifications />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Posts />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/notifications" element={<Notifications />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
-

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { users, initialPosts } from "../data";
 import CreatePost from "./CreatePost";
-
+import { Link } from "react-router-dom";
 export default function Posts() {
   const [posts, setPosts] = useState(initialPosts);
 
@@ -12,7 +12,7 @@ export default function Posts() {
       {posts.map((post) => (
   <div className="post" key={post.id}>
     <p>{post.title}</p>
-    <a className="button" href={`/posts/${post.id}`}>Edit</a>
+    <Link className="button" to={`/posts/${post.id}`}>Edit</Link>
     <div></div> {/* placeholder */}
     <div>
       {post.reactions.map((r, i) => (
