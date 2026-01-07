@@ -10,9 +10,9 @@ export default function App() {
     <div className="App">
       <h1>GenZ</h1>
 
-      <a href="/">Posts</a>
-      <a href="/users">Users</a>
-      <a href="/notifications">Notifications</a>
+      <a className="button" href="/">Posts</a>
+      <a className="button" href="/users">Users</a>
+      <a className="button" href="/notifications">Notifications</a>
 
       {path === "/" && <Posts />}
       {path === "/users" && <Users />}
