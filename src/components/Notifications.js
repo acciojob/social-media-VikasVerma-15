@@ -10,9 +10,12 @@ export default function Notifications() {
         Refresh Notifications
       </button>
 
-      {list.map((n) => (
-        <p key={n.id}>{n.message}</p>
-      ))}
+      <section className="notificationsList">
+        {list.map((n) => (
+          <div key={n.id}>{n.message}</div>
+        ))}
+      </section>
     </div>
   );
 }
+

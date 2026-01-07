@@ -9,7 +9,7 @@ export default function Posts() {
     <div className="posts-list">
       <CreatePost setPosts={setPosts} users={users} />
 
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <div className="post" key={post.id}>
           <p>{post.title}</p>
 
@@ -24,9 +24,11 @@ export default function Posts() {
               <button
                 key={i}
                 onClick={() => {
-                  const updated = [...posts];
-                  updated[0].reactions[i]++;
-                  setPosts(updated);
+                  if (i < 4) { // first 4 buttons react
+                    const updated = [...posts];
+                    updated[index].reactions[i]++; // <- correct post
+                    setPosts(updated);
+                  }
                 }}
               >
                 {r}
