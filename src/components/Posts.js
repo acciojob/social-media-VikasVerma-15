@@ -7,34 +7,26 @@ export default function Posts() {
 
   return (
     <div className="posts-list">
-      {/* child(1) */}
       <CreatePost setPosts={setPosts} users={users} />
 
       {posts.map((post) => (
-        // child(2) → EACH post
-        <div key={post.id} className="post">
-          {/* child(1) */}
+        <div className="post" key={post.id}>
           <p>{post.title}</p>
 
-          {/* child(2) */}
           <a className="button" href={`/posts/${post.id}`}>
             Edit
           </a>
 
-          {/* child(3) — EMPTY div (Cypress expects this) */}
           <div></div>
 
-          {/* child(4) — reactions */}
           <div>
             {post.reactions.map((r, i) => (
               <button
                 key={i}
                 onClick={() => {
-                  if (i < 4) {
-                    const updated = [...posts];
-                    updated[0].reactions[i]++;
-                    setPosts(updated);
-                  }
+                  const updated = [...posts];
+                  updated[0].reactions[i]++;
+                  setPosts(updated);
                 }}
               >
                 {r}
