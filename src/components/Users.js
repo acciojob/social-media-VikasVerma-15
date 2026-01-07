@@ -2,14 +2,15 @@ import React from "react";
 import { users } from "../data";
 import { Link } from "react-router-dom";
 
-export default function Users() {
+export default function UserPosts() {
   return (
-    <ul>
+    <div>
       {users.map((user) => (
-        <li key={user.id}>
+        <div key={user.id} className="user-item">
           <Link to={`/users/${user.id}`}>{user.name}</Link>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
+
