@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Posts from "./pages/Posts";
-import Users from "./pages/Users";
-import Notifications from "./pages/Notifications";
-import PostDetails from "./pages/PostDetails";
-import UserPosts from "./pages/UserPosts";
+import Posts from "./Posts";
+import Users from "./Users";
+import Notifications from "./Notifications";
+import PostDetails from "./PostDetails";
+import UserPosts from "./UserPosts";
 
 export default function App() {
   return (
